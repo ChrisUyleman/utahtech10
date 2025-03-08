@@ -124,8 +124,8 @@ footer {
     background-position: center;
     grid-row-start: 3;
     grid-row-end: 4;
-    grid-column-start: 2;
-    grid-column-end: 8;
+    grid-column-start: 1;
+    grid-column-end: 9;
 }
 #studenthero {
     height: 300px;
@@ -135,8 +135,8 @@ footer {
     background-position: center;
     grid-row-start: 3;
     grid-row-end: 4;
-    grid-column-start: 2;
-    grid-column-end: 8;
+    grid-column-start: 1;
+    grid-column-end: 9;
 }
 #facultyhero {
     height: 300px;
@@ -146,10 +146,70 @@ footer {
     background-position: center;
     grid-row-start: 3;
     grid-row-end: 4;
-    grid-column-start: 2;
-    grid-column-end: 8;
+    grid-column-start: 1;
+    grid-column-end: 9;
 }
+
+#bluebar {
+    background-color: #003058;
+    grid-row: 1 / 2;
+    grid-column: 1 / 9;
+}
+
+#greybar {
+    background-color: #424242;
+    grid-row: 2 / 3;
+    grid-column: 1 / 9;
+}
+
 * {
     box-sizing: border-box;
     margin: 0px;
+}
+
+@media only screen and (max-width: 1100px) {
+    #wrapper {
+        display: grid;
+        grid-auto-rows: minmax(0px, auto);
+        grid-template-columns: minmax(0px, 1fr) repeat(6, minmax(0, 150px)) minmax(0px, 1fr);
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    nav {
+        grid-row: 2 /3;
+        grid-column: 1 / 5;
+        position: static;
+    }
+
+    nav ul {
+        flex-flow: column nowrap;
+    }
+    #homehero, #studenthero, #facultyhero {
+        grid-row: 2 / 3;
+        grid-column: 5 / 8;
+        height: auto;
+    }
+    main img {
+        float: none;
+        width: 100%;
+        height: auto;
+        padding-left: 0px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    header h1 {
+        background-image: none;
+        text-align: center;
+    }
+
+    nav {
+        grid-row: 2 / 3;
+        grid-column: 1 / 9;
+    }
+
+    #homehero, #studenthero, #facultyhero {
+        display: none;
+    }
 }
