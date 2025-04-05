@@ -61,6 +61,7 @@ h2 {
 }
 h3 {
     color: #003058;
+    float: none;
 }
 nav {
     background-color: #424242;
